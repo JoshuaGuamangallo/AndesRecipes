@@ -1,0 +1,165 @@
+.backgroundImage{
+    position: absolute;
+    left: 0%;
+    right: 76.25%;
+    top: 13%;
+    bottom: 0%;
+    border-radius: 0px 0px 100px 0px;
+}
+
+.container{
+    position: absolute;
+    width: 1098px;
+    height: 944px;
+    left: 342px;
+    top: 80px;
+}
+
+.info{
+    position: absolute;
+    width: 1098px;
+    height: 231px;
+    left: 0px;
+    top: 0px;
+    .title{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        position: absolute;
+        left: 4.37%;
+        right: 4.37%;
+        top: 3.39%;
+        bottom: 91.53%;
+    }
+    h2{
+        position: static;
+        width: 1002px;
+        left: calc(50% - 1002px/2);
+        top: 0%;
+        bottom: 0%;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        color: #19191A;
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+    }
+}
+.search{
+    mat-icon{
+        position: absolute;
+        font-size: 25px;
+        right: 1014px;
+        top: 125px;
+        z-index: 1;
+    }
+    input{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 16px;
+        position: absolute;
+        width: 490px;
+        height: 48px;
+        left: 48px;
+        top: 112px;
+        background-color: #F9F9F9;
+        border: 0;
+        text-indent: 50px;
+    }   
+}
+
+.filter{
+    select{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        position: absolute;
+        width: 199px;
+        height: 48px;
+        left: 554px;
+        top: 112px;
+        background: #EBF0F3;
+        border-radius: 16px;
+        font-family: 'Poppins';
+        text-align: right;
+        font-size: 14px;
+        text-indent: 72px;
+        outline:none;
+    }
+    
+}
+
+.recipes{
+
+    .star-rating {
+        $size: 20px;
+        $normal: #95A5A6;
+        $selected: #F39C12;
+        
+        display: inline-block;
+        
+        a {
+          display: inline-block;
+          width: $size;
+          height: $size;
+          line-height: $size;
+          font-size: $size;
+          color: $normal;
+          text-decoration: none;
+          text-align: center;
+          transition: color .3s;
+        }
+        &:hover a {
+          color: $selected;
+          
+          &:hover ~ a {
+            color: $normal;
+          }
+        }
+        
+      }
+    mat-table{
+        position: absolute;
+        width: 1002px;
+        height: 48px;
+        left: 48px;
+        top: 184px;
+        font-family: 'Poppins';
+
+    }
+    mat-header-cell{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #79797A;
+    }
+    mat-cell {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: normal;
+        color: #19191A;
+    }
+
+    ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+        background-color: #fff!important;
+    }
+    
+    ::ng-deep  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+        background-color: #8DC63F!important;
+    }
+
+}
+

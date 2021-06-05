@@ -1,0 +1,51 @@
+<div fxLayout="row">
+    <div class="backgroundImage">
+        <img src="../../assets/img/food.svg" alt="food imagen">
+    </div>
+    <div class="container">
+        <div class="info">
+            <div class="title">
+                <h2>Kitchen Recipes</h2>
+            </div>
+            <div class="search">
+                    <mat-icon>search</mat-icon>
+                    <input class="textInput"  placeholder="Search">
+            </div>
+            <div class="filter" >
+                
+                <select>
+                    Cooked Before:
+                    <option *ngFor="let item of filterName"> 
+                        {{item}}
+                        <mat-radio-button class="example-radio-button" >
+                        </mat-radio-button>
+                    </option>
+                </select>
+            </div>
+            <div class="recipes">
+                <mat-table [dataSource]="dataSource" class="mat-elevation-z8" fxLayout="column">
+                  
+                    <ng-container matColumnDef="recipeName">
+                      <mat-header-cell *matHeaderCellDef fxFlex="60%"> Recipe Name </mat-header-cell>
+                      <mat-cell *matCellDef="let element" fxFlex="60%"> {{element.name}}</mat-cell>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="reviews">
+                      <mat-header-cell *matHeaderCellDef fxFlex="20%"> Reviews </mat-header-cell>
+                      <mat-cell *matCellDef="let element" fxFlex="20%" > 
+                        <div id="rateYo"></div>
+                      </mat-cell>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="cookedBefore" class="cooked">
+                      <mat-header-cell *matHeaderCellDef fxFlex="20%"> Cooked Before </mat-header-cell>
+                      <mat-cell *matCellDef="let element" fxFlex="20%"> <mat-slide-toggle></mat-slide-toggle></mat-cell>
+                    </ng-container>
+                  
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </div>
+    </div>
+</div>
