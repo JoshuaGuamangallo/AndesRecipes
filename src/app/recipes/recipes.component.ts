@@ -10,6 +10,17 @@ import { MatTableDataSource } from '@angular/material/table';
 export class RecipesComponent implements OnInit {
 
 
+  filterName = [
+    {
+      filter:"All"
+    },
+    {
+      filter:"Active"
+    },
+    {
+      filter:"Inactive"
+    },
+  ];
   data: Recipes[] = [
     {id:1, name: 'Mixed Berry Melody', status: true},
     {id:2, name: 'Thai red curry cauliflower soup', status: true},
@@ -33,6 +44,7 @@ export class RecipesComponent implements OnInit {
   displayedColumns: string[] = ['recipeName', 'reviews', 'cookedBefore'];
   dataSource = this.data;
   searchFilter: string = '';
+  textoDeInput: string = '';
   constructor() {
   }
 
@@ -43,6 +55,10 @@ export class RecipesComponent implements OnInit {
   {
     this.searchFilter = search;
     console.log(search)
+  }
+  nameFilter(event)
+  {
+    console.log(event)
   }
 }
   

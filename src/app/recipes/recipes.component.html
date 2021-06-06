@@ -11,19 +11,22 @@
                     <mat-icon>search</mat-icon>
                     <input class="textInput"  placeholder="Search">
             </div>
-            <div class="filter">
-                <button mat-button [matMenuTriggerFor]="menu">Cooked Before: <mat-icon>expand_more</mat-icon></button>
+            <div class="filter" *ngFor="let filter of filterName">
+                <button mat-button [matMenuTriggerFor]="menu" *ngIf="filterName"  >Cooked Before: <b>All</b> <mat-icon>expand_more</mat-icon></button>
                 <mat-menu #menu="matMenu" >
                     <div >
-                        <div fxLayout="row"  fxLayout="row" fxLayoutAlign="end center"><button mat-menu-item fxFlex="70%">All </button>
-                            <input class="filterButton" type="radio" fxFlex="30%"  #searchAll value="1" (click)="onSearch(searchAll.value)"></div>
+                        <div fxLayout="row"  fxLayout="row" fxLayoutAlign="end center"><button mat-menu-item fxFlex="70%" value="All" (click)="nameFilter($event)">All </button>
+                            <input class="filterButton" type="radio" id="1" name="search" fxFlex="30%"  #searchAll value="1" (click)="onSearch(searchAll.value)" checked>
+                        </div>
                         <div fxLayout="row" fxLayout="row" fxLayoutAlign="end center"><button mat-menu-item fxFlex="70%">Active</button>
-                            <input class="filterButton" type="radio" fxFlex="30%" #searchActive value="2" (click)="onSearch(searchActive.value)"></div>
+                            <input class="filterButton" type="radio" id="2" name="search" fxFlex="30%" #searchActive value="2" (click)="onSearch(searchActive.value)">
+                        </div>
                         <div fxLayout="row" fxLayout="row" fxLayoutAlign="end center"><button mat-menu-item fxFlex="70%">Inactive</button>
-                            <input class="filterButton" type="radio" fxFlex="30%" #searchInactive value="3" (click)="onSearch(searchInactive.value)"></div>
+                            <input class="filterButton" type="radio" id="3" name="search" fxFlex="30%" #searchInactive value="3" (click)="onSearch(searchInactive.value)">
+                        </div>
                     </div>
                 </mat-menu>
-            </div>
+            </div>            
             <div class="recipes">
                 <mat-table [dataSource]="dataSource | filterRecipes:searchFilter" class="mat-elevation-z8" fxLayout="column"  >
                   
@@ -34,17 +37,17 @@
                     </ng-container>
                   
                     <ng-container matColumnDef="reviews" >
-                      <mat-header-cell *matHeaderCellDef fxFlex="20%"> Reviews </mat-header-cell>
-                      <mat-cell *matCellDef="let element" fxFlex="20%"  > 
+                      <mat-header-cell *matHeaderCellDef fxFlex="25%"> Reviews </mat-header-cell>
+                      <mat-cell *matCellDef="let element" fxFlex="25%"  > 
                         <form class="starRating" >
                             <div class="start"  >
-                              <input id="radio1" type="radio" name="estrellas" value="1">
+                              <input id="radio1" type="radio" name="stars" value="1">
                               <label for="radio1">★</label>
-                              <input id="radio2" type="radio" name="estrellas" value="2">
+                              <input id="radio2" type="radio" name="stars" value="2">
                               <label for="radio2">★</label>
-                              <input id="radio3" type="radio" name="estrellas" value="3">
+                              <input id="radio3" type="radio" name="stars" value="3">
                               <label for="radio3">★</label>
-                              <input id="radio4" type="radio" name="estrellas" value="4">
+                              <input id="radio4" type="radio" name="stars" value="4">
                               <label for="radio4">★</label>
                             </div>
                           </form>
@@ -52,13 +55,22 @@
                     </ng-container>
                   
                     <ng-container matColumnDef="cookedBefore" class="cooked">
-                      <mat-header-cell *matHeaderCellDef fxFlex="20%"> Cooked Before </mat-header-cell>
-                      <mat-cell *matCellDef="let element " fxFlex="20%"  > <mat-slide-toggle  [(ngModel)]="element.status "></mat-slide-toggle></mat-cell>
+                      <mat-header-cell *matHeaderCellDef fxFlex="15%"> Cooked Before </mat-header-cell>
+                      <mat-cell *matCellDef="let element " fxFlex="15%"  > <mat-slide-toggle  [(ngModel)]="element.status"></mat-slide-toggle></mat-cell>
                     </ng-container>
                   
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    
                 </mat-table>
+            </div>
+            <div class="buttonCreate">
+                <button mat-raised-button class="floatingButton" 
+                    matTooltip="Add recipe"
+                    matTooltipPosition="right">
+                    <mat-icon >add</mat-icon>
+                </button>
+
             </div>
         </div>
     </div>

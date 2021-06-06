@@ -9,6 +9,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const importsMaterial = [
   MatSelectModule,
@@ -19,7 +20,8 @@ const importsMaterial = [
   MatSlideToggleModule,
   MatMenuModule,
   MatButtonModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+  MatTooltipModule
 ]
 
 @NgModule({

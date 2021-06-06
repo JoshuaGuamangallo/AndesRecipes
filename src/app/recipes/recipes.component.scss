@@ -95,10 +95,17 @@
         font-size: 14px;
         text-indent: 72px;
         outline:none;
+
     button{
         width: 400px;
         height: 48px; 
         border-radius: 16px; 
+        border: none;
+        outline:none;
+        font-family: 'Poppins';
+    }
+    mat-icon{
+        text-indent: 10px;
     }
 
 
@@ -177,6 +184,22 @@
         color: #19191A;
     }
 
+
+
+}
+
+.buttonCreate{
+    button{
+        height: 56px;
+        width: 56px;
+        left: 990px;
+        top: 900px;
+        border-radius: 50px;
+        background-color: #0C969D;  
+    }
+    mat-icon{
+        -webkit-text-fill-color:white;
+    }
 
 
 }
