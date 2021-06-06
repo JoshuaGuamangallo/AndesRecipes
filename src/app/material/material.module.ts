@@ -6,6 +6,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const importsMaterial = [
   MatSelectModule,
@@ -13,7 +16,10 @@ const importsMaterial = [
   MatIconModule,
   MatRadioModule,
   MatTableModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatMenuModule,
+  MatButtonModule,
+  BrowserAnimationsModule
 ]
 
 @NgModule({

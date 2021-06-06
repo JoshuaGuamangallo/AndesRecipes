@@ -78,12 +78,11 @@
 }
 
 .filter{
-    select{
+    
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 12px 24px;
         position: absolute;
         width: 199px;
         height: 48px;
@@ -96,39 +95,58 @@
         font-size: 14px;
         text-indent: 72px;
         outline:none;
+    button{
+        width: 400px;
+        height: 48px; 
+        border-radius: 16px; 
     }
-    
+
+
 }
 
 .recipes{
+    .disabled{
+        color: #79797A;
+    }
 
-    .star-rating {
-        $size: 20px;
-        $normal: #95A5A6;
-        $selected: #F39C12;
-        
-        display: inline-block;
-        
-        a {
-          display: inline-block;
-          width: $size;
-          height: $size;
-          line-height: $size;
-          font-size: $size;
-          color: $normal;
-          text-decoration: none;
-          text-align: center;
-          transition: color .3s;
+    .starRating{
+
+        label{ color:grey;}
+        input[type = "radio"]{ display:none;}
+        .start{
+            direction: rtl;
+            unicode-bidi: bidi-override;
         }
-        &:hover a {
-          color: $selected;
+        label:hover{color:#FFD19A;}
+        label:hover ~ label{color:#FFD19A;}
+        input[type = "radio"]:checked ~ label{color:#FFD19A;}
           
-          &:hover ~ a {
-            color: $normal;
+        label {
+            font-size: 24px;
           }
-        }
-        
-      }
+          
+          input[type="radio"] {
+            display: none;
+          }
+          
+          label {
+            color:  #E9DBCB;;
+          }
+          
+          .clasificacion {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+          }
+          
+          label:hover,
+          label:hover ~ label {
+            color: #FFD19A;
+          }
+          
+          input[type="radio"]:checked ~ label {
+            color: #FFD19A;
+          }
+    }
     mat-table{
         position: absolute;
         width: 1002px;
@@ -137,6 +155,12 @@
         top: 184px;
         font-family: 'Poppins';
 
+    }
+    mat-header-row {
+        min-height: 48px;
+    }
+    mat-row, mat-footer-row {
+        min-height: 40px;
     }
     mat-header-cell{
         font-style: normal;
@@ -153,13 +177,27 @@
         color: #19191A;
     }
 
-    ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
-        background-color: #fff!important;
-    }
-    
-    ::ng-deep  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
-        background-color: #8DC63F!important;
-    }
+
 
 }
 
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #fff!important;
+}
+
+::ng-deep  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #8DC63F!important;
+}
+
+::ng-deep .mat-menu-panel {
+    min-width: 250px!important;
+}
+
+.mat-menu-item {
+    height: 36px;
+}
+
+input[type=radio] {
+    width: 100%;
+    height: 1.5em;
+}

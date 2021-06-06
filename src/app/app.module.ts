@@ -7,7 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterRecipesPipe } from './pipes/filter-recipes.pipe';
+
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     RecipesComponent,
+    FilterRecipesPipe,
     
   ],
   imports: [
@@ -22,8 +25,11 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FlexLayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
